@@ -78,7 +78,6 @@ def get_rss_feed_articles(url):
             print(f"Error downloading or parsing article: {e}")
 
 
-
 cn = mysql.connector.connect(**sql_config)
 cr = cn.cursor()
 sql = f"SELECT url FROM rss.urls"
@@ -92,4 +91,3 @@ if cn:
 for url in urls:
     print(url[0])
     get_rss_feed_articles(url[0])
-
